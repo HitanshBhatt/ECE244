@@ -1,0 +1,193 @@
+[bhatthit@remote ~]$ cd /u/d/bhatthit/ece244/lab5
+[bhatthit@remote lab5]$ ~ece244i/public/exercise 5 Parser.exe
+working dir: /u/course/ece244i/public//5
+
+#############################################################
+#############################################################
+Running Testcase 1
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+circle c1 1 1 250
+circle c2 -1.14 4 300
+rectangle r1 1.419 3.4193 1.45 2.999
+rectangle r2 1.0 3 999.99 1.2
+area
+draw
+/tmp/GZkAggh7yV/Parser.exe.bhatthit < ./1 > /tmp/GZkAggh7yV/bhatthit.out1 2> /tmp/GZkAggh7yV/bhatthit.err1
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> created circle
+> created circle
+> created rectangle
+> created rectangle
+> Total area = 480297.22
+> circle: c1 1.00 1.00 250.00 196349.53
+circle: c2 -1.14 4.00 300.00 282743.34
+rectangle: r1 1.42 3.42 1.45 3.00 4.35
+rectangle: r2 1.00 3.00 999.99 1.20 1199.99
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 1 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 2
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+circle c1 1 1 4
+rectangle r1 5 5 4 8
+triangle t1 8 8 10 10 12 8
+draw
+area
+circles c2 1 1 1
+circle triangle 1 1 1
+triangle r1 10 10 20 20 40 30
+/tmp/GZkAggh7yV/Parser.exe.bhatthit < ./2 > /tmp/GZkAggh7yV/bhatthit.out2 2> /tmp/GZkAggh7yV/bhatthit.err2
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> created circle
+> created rectangle
+> created triangle
+> circle: c1 1.00 1.00 4.00 50.27
+rectangle: r1 5.00 5.00 4.00 8.00 32.00
+triangle: t1 10.00 8.67 8.00 8.00 10.00 10.00 12.00 8.00 4.00
+> Total area = 86.27
+> Error: invalid command
+> Error: triangle is a reserved word
+> Error: a shape with the name r1 already exists
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 2 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 3
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+triangle t1 1 1 2 2 0 3
+triangle t2 1.3 4.1 0.1 9.9 3.41351 3.1411111
+triangle t3 -0.5 -40.0 1.0 -0.99 0.45 0.1341
+area
+draw
+/tmp/GZkAggh7yV/Parser.exe.bhatthit < ./3 > /tmp/GZkAggh7yV/bhatthit.out3 2> /tmp/GZkAggh7yV/bhatthit.err3
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> created triangle
+> created triangle
+> created triangle
+> Total area = 18.62
+> triangle: t1 1.00 2.00 1.00 1.00 2.00 2.00 0.00 3.00 1.50
+triangle: t2 1.60 5.71 1.30 4.10 0.10 9.90 3.41 3.14 5.55
+triangle: t3 0.32 -13.62 -0.50 -40.00 1.00 -0.99 0.45 0.13 11.57
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 3 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+
+#############################################################
+################# Summary for 3 test(s) #####################
+#############################################################
+
+Functionality: PASS: All tests passed
+Valgrind:      PASS: No memory leaks detected
+
+#############################################################
+#############################################################
+#############################################################
+
+[bhatthit@remote lab5]$ chmod -R go-rwx lab5
+chmod: cannot access 'lab5': No such file or directory
+[bhatthit@remote lab5]$ cd /u/d/bhatthit/ece244
+[bhatthit@remote ece244]$ chmod -R go-rwx lab5
+[bhatthit@remote ece244]$ ls -l
+total 4
+drwx------ 4 bhatthit esc2t5   73 Sep 21 19:27 lab1
+drwx------ 4 bhatthit esc2t5  237 Oct  6 21:19 lab2
+drwx------ 4 bhatthit esc2t5  178 Oct 30 21:31 lab3
+drwx------ 5 bhatthit esc2t5 4096 Nov 25 14:17 lab4
+drwx------ 3 bhatthit esc2t5  322 Dec  6 22:27 lab5
+[bhatthit@remote ece244]$ cd /u/d/bhatthit/ece244/lab5
+[bhatthit@remote lab5]$ mkdir lab5_submission
+[bhatthit@remote lab5]$ cd /u/d/bhatthit/ece244/lab5/lab5_submission
+[bhatthit@remote lab5_submission]$ ~ece244i/public/submit 5
+Submitting assignment 5 from remote.ecf.utoronto.ca
+Checking for the expected files in the current directory
+Rectangle.h Rectangle.cpp Triangle.h Triangle.cpp Parser.cpp
+Attempting to build your code.  Make output follows:
+==================================================================
+g++ -std=c++11 -c -g Parser.cpp -o Parser.o
+g++ -std=c++11 -c -g Circle.cpp -o Circle.o
+g++ -std=c++11 -c -g Rectangle.cpp -o Rectangle.o
+g++ -std=c++11 -c -g Triangle.cpp -o Triangle.o
+g++ -std=c++11 Parser.o Circle.o Rectangle.o Triangle.o Shape.o ShapesDB.o -o Parser.exe
+------------------------------------------------------------------
+The build appears to have been successful
+
+Running exercise on the produced executable 'Parser.exe'
+############### Testcase 1 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 2 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 3 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+################# Summary for 3 test(s) #####################
+Functionality: PASS: All tests passed
+Valgrind:      PASS: No memory leaks detected
+
+The required files passed exercise
+
+Submitting files
+
+Verifying submission
+submitece244f -l 5
+total 24
+-rw-r----- 1 submit ece244gp 4479 Dec  6 22:31 Parser.cpp
+-rw-r----- 1 submit ece244gp 1460 Dec  6 22:31 Rectangle.cpp
+-rw-r----- 1 submit ece244gp 1227 Dec  6 22:31 Rectangle.h
+-rw-r----- 1 submit ece244gp 2050 Dec  6 22:31 Triangle.cpp
+-rw-r----- 1 submit ece244gp 1525 Dec  6 22:31 Triangle.h
+
+All filesizes match. All timestamps match submission time.
+
+Submission was successful
+
+[bhatthit@remote lab5_submission]$

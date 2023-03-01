@@ -1,0 +1,1 @@
+Input: 31F                  Output: 31 F, -0.555556 C, 272.444 K        (Kelvin value should be 272.594)

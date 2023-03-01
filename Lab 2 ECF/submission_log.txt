@@ -1,0 +1,71 @@
+Submitting assignment 2 from remote.ecf.utoronto.ca
+Checking for the expected files in the current directory
+playMove.cpp tictactoe.cpp GameState.cpp
+Attempting to build your code.  Make output follows:
+==================================================================
+playMove.cpp: In function ?void playMove(GameState&)?:
+playMove.cpp:21:10: warning: unused variable ?tie? [-Wunused-variable]
+     bool tie = false;
+          ^~~
+playMove.cpp:22:9: warning: unused variable ?temp? [-Wunused-variable]
+     int temp;
+         ^~~~
+playMove.cpp:23:9: warning: unused variable ?code_counter? [-Wunused-variable]
+     int code_counter = 0;
+         ^~~~~~~~~~~~
+playMove.cpp:24:9: warning: variable ?winCode_arr? set but not used [-Wunused-but-set-variable]
+     int winCode_arr[7];
+         ^~~~~~~~~~~
+g++ -I/u/course/ece244i/public/2/common -Wall -Wextra -pedantic -std=c++11 -c playMove.cpp -o playMove.o
+g++ -I/u/course/ece244i/public/2/common -Wall -Wextra -pedantic -std=c++11 -c GameState.cpp -o GameState.o
+g++ -I/u/course/ece244i/public/2/common -Wall -Wextra -pedantic -std=c++11 -c tictactoe.cpp -o tictactoe.o
+g++ playMove.o GameState.o tictactoe.o -o tictactoe.exe -Wall -Wextra -pedantic -std=c++11
+------------------------------------------------------------------
+The build appears to have been successful
+
+Running exercise on the produced executable 'tictactoe.exe'
+############### Testcase 1 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 2 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 3 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 4 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 5 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 6 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 7 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 8 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+############### Testcase 9 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+################# Summary for 9 test(s) #####################
+Functionality: PASS: All tests passed
+Valgrind:      PASS: No memory leaks detected
+
+The required files passed exercise
+
+Submitting files
+
+Verifying submission
+submitece244f -l 2
+total 20
+-rw-r----- 1 submit ece244gp 3876 Oct  5 20:35 GameState.cpp
+-rw-r----- 1 submit ece244gp 6771 Oct  5 20:35 playMove.cpp
+-rw-r----- 1 submit ece244gp 4511 Oct  5 20:35 tictactoe.cpp
+
+All filesizes match. All timestamps match submission time.
+
+Submission was successful
